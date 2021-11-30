@@ -208,7 +208,7 @@ const handleSubmit = () => {
         placement="bottom-start"
         :options="menuOptions"
       >
-        <n-button text> menu </n-button>
+        <n-button text> help </n-button>
       </n-dropdown>
     </div>
 

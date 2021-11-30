@@ -136,15 +136,20 @@ provide('setOutput', setOutput)
 <style>
 /* 覆盖编辑器样式 */
 .ace_editor {
-  background-color: inherit!important;
+  background-color: inherit !important;
 }
 .ace_active-line {
-  background-color: var(--editorActiveLine-bgColor)!important;
+  background-color: var(--editorActiveLine-bgColor) !important;
 }
+
 .ace_gutter {
-  color: var(--editorBar-textColor)!important;
-  background-color: var(--editorBar-bgColor)!important;
+  color: var(--editorBar-textColor) !important;
+  background-color: var(--editorBar-bgColor) !important;
 }
+.ace_gutter-active-line {
+  background-color: inherit !important;
+}
+
 .ace_content {
   background-color: var(--editor-bgColor)!important;
 }
