@@ -82,7 +82,7 @@ const editorThemeOptions = ['chrome', 'xcode', 'github', 'monokai', 'dracula'].m
         />
       </n-form-item-gi>
       
-      <n-form-item-gi :span="24" label="背景图链接" path="bgUrl">
+      <n-form-item-gi :span="24" label="背景图链接（用图床上传，如：imgurl.org）" path="bgUrl">
         <n-input
           name="bgUrl"
           v-model:value="theme.bgUrl"
@@ -93,7 +93,7 @@ const editorThemeOptions = ['chrome', 'xcode', 'github', 'monokai', 'dracula'].m
       <n-form-item-gi :span="24" label="背景模糊度" path="bgUrl">
         <n-slider
           v-model:value="theme.bgBlur"
-          :format-tooltip="(value: number) => `${value}px`"
+          :format-tooltip="(value: number) => `${value}%`"
         />
       </n-form-item-gi>
     </n-grid>

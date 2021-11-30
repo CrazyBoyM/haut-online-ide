@@ -80,7 +80,7 @@ int main() {
 const code = ref(getItem('code') || initialCode)
 
 //  输入控制台的内容
-const initialInput = `3 6`
+const initialInput = `1 2`
 const input = ref(getItem('input') || initialInput)
 
 //  输出控制台的内容
@@ -107,7 +107,7 @@ provide('setOutput', setOutput)
         '--header-logoColor': theme.headerLogoColor,
         '--header-textColor': theme.headerTextColor,
         '--bg-url': `url('${theme.bgUrl}')`,
-        '--bg-blur': `${theme.bgBlur / 7}px`,
+        '--bg-blur': `${theme.bgBlur / 3}px`,
       }">
     <Header>
       <div class="flex flex-row items-center justify-between w-full h-full">
