@@ -94,6 +94,10 @@ provide('code', code)
 provide('input', input)
 provide('output', output)
 provide('setOutput', setOutput)
+
+//  评测提交状态
+const judging = ref(false)
+provide('judging', judging)
 </script>
 
 <template>

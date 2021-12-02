@@ -70,7 +70,7 @@ const menuOptions = [
             onClick: () => notification.info({
               title: '快捷键',
               description: '这是一些常用的内置快捷键命令。',
-              content: `  Ctrl + s 保存\n  Ctrl + d 删除当前行\n  Ctrl + z 撤销   Ctrl + y 前进\n  Ctrl + f 查找与替换`,
+              content: `  Ctrl + s 保存   Ctrl + r 运行\n  Ctrl + z 返回   Ctrl + y 前进\n  Ctrl + f 查找与替换\n  Ctrl + d 清除当前一行`,
             })
           }
         },
@@ -94,7 +94,7 @@ const menuOptions = [
           props: {
             onClick: () => notification.create({
               title: '关于',
-              content: `名称: Haut Online IDE\n版本: 1.0.0\n开发者团队: A02N119 寝室`,
+              content: `名称: Haut Online IDE\n版本: 1.0.0\n开发者团队: A02N119 寝室\n问题反馈邮箱：ai-lab@foxmail.com`,
             })
           }
         }
@@ -107,13 +107,61 @@ const langOptions = [
          key: 'c_cpp'
         },
         {
+          label: 'C#',
+          key: 'csharp'
+        },
+        {
+          label: 'Go',
+          key: 'golang'
+        },
+        {
+          label: 'Kotlin',
+          key: 'kotlin'
+        },
+        {
           label: 'Java',
           key: 'java'
         },
         {
-          label: 'Python',
+          label: 'JavaScript',
+          key: 'javascript'
+        },
+        {
+          label: 'TypeScript',
+          key: 'typescript'
+        },
+        {
+          label: 'Python(ML)',
           key: 'python'
-        }
+        },
+        {
+          label: 'PHP',
+          key: 'php'
+        },
+        {
+          label: 'Lua',
+          key: 'lua'
+        },
+        {
+          label: 'shell(Bash)',
+          key: 'sh'
+        },
+        {
+          label: 'R',
+          key: 'r'
+        },
+        {
+          label: 'Lisp',
+          key: 'lisp'
+        },
+        {
+          label: 'haskell',
+          key: 'haskell'
+        },
+        {
+          label: 'assembly_x86(汇编)',
+          key: 'assembly_x86'
+        },
       ]
 const lang = inject('lang') as Ref<string>
 const setLang = inject('setLang') as (val: string) => void
@@ -179,7 +227,7 @@ const input = inject('input') as Ref<string>
 const setOutput = inject('setOutput') as (val: string) => void
 
 //  提交代码评测
-const judging = ref(false) 
+const judging = inject('judging') as Ref<boolean>
 const handleSubmit = () => {
   if(code.value.match(/^\s*$/)) {
     message.warning('请输入代码')
@@ -200,8 +248,8 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div class="flex items-center justify-around pr-6 space-x-9 w-max">
-    <div class="w-3">
+  <div class="flex pr-6">
+    <div class="flex space-x-3.5 pr-3.5">
       <n-dropdown
         trigger="hover"
         @select=""
@@ -210,40 +258,34 @@ const handleSubmit = () => {
       >
         <n-button text> help </n-button>
       </n-dropdown>
-    </div>
 
-    <div class="w-6">
       <n-dropdown
         trigger="hover"
         @select="handleSelectTabSize"
         placement="bottom-start"
         :options="tabSizeOptions"
       >
-        <n-button text> tab：{{ tabSize }} </n-button>
+        <n-button text> tab: {{ tabSize }} </n-button>
       </n-dropdown>
-    </div>
 
-    <div class="w-9">
       <n-dropdown
         trigger="hover"
         @select="handleSelectTextSize"
         placement="bottom-start"
         :options="textSizeOptions"
       >
-        <n-button text> size：{{ textSize }} </n-button>
+        <n-button text> size: {{ textSize }} </n-button>
+      </n-dropdown>
+      
+      <n-dropdown
+        trigger="hover"
+        @select="handleSelectLang"
+        placement="bottom-start"
+        :options="langOptions"
+      >
+        <n-button text> lang: {{ lang }} </n-button>
       </n-dropdown>
     </div>
-      
-      <div class="w-16">
-        <n-dropdown
-          trigger="hover"
-          @select="handleSelectLang"
-          placement="bottom-start"
-          :options="langOptions"
-        >
-          <n-button text> lang：{{ lang }} </n-button>
-        </n-dropdown>
-      </div>
-      <n-button type="primary" :loading="judging" :disabled="judging" @click="handleSubmit" round>运行（Run）</n-button>
+    <n-button type="primary" :loading="judging" :disabled="judging" @click="handleSubmit" round>运行（Run）</n-button>
   </div>
 </template>
