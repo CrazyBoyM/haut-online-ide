@@ -3,6 +3,7 @@ import { NForm, NGrid, NFormItemGi, NColorPicker, NSelect, NInput, NSlider } fro
 import { setItem } from '/@/utils/localData'
 
 interface Theme {
+  [x: string]: any,
   editorBgColor: string;
   editorTheme: string;
   editorActiveLineBgColor: string;
@@ -16,7 +17,7 @@ interface Theme {
 }
 const props = defineProps<{ theme: Theme }>()
 const theme = props.theme
-setItem('oldTheme', JSON.stringify(theme))
+setItem('oldTheme', JSON.stringify(theme.value))
 
 const editorThemeOptions = ['chrome', 'xcode', 'github', 'monokai', 'dracula'].map(
       (v) => ({
