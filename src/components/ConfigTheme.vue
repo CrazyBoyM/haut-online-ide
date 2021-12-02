@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { NForm, NGrid, NFormItemGi, NColorPicker, NSelect, NInput, NSlider } from 'naive-ui'
+import { setItem } from '/@/utils/localData'
 
 interface Theme {
   editorBgColor: string;
@@ -15,6 +16,8 @@ interface Theme {
 }
 const props = defineProps<{ theme: Theme }>()
 const theme = props.theme
+setItem('oldTheme', JSON.stringify(theme))
+
 const editorThemeOptions = ['chrome', 'xcode', 'github', 'monokai', 'dracula'].map(
       (v) => ({
         label: v,

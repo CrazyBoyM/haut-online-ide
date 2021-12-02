@@ -3,7 +3,7 @@ import { inject, ref, Ref, h } from 'vue'
 import { NButton, NDropdown, useNotification, useMessage, useDialog } from 'naive-ui'
 import ConfigThemeVue from './ConfigTheme.vue'
 import { submitCode } from '../api/submission'
-import { setItem, removeItem } from '/@/utils/localData'
+import { setItem, removeItem, getItem } from '/@/utils/localData'
 
 const notification = useNotification()
 const message = useMessage()
@@ -56,7 +56,7 @@ const menuOptions = [
                 message.success('已保存主题！')
               },
               onClose: () => {
-                let oldTheme = { ...theme.value }
+                let oldTheme = JSON.parse(getItem('oldTheme') as string)
                 setTheme(oldTheme)
               },
               maskClosable: false,
