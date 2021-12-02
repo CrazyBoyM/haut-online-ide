@@ -37,7 +37,6 @@ interface Theme {
 }
 const theme = inject('theme') as Theme
 const setTheme = inject('setTheme') as (val: object) => void
-let oldTheme = { ...theme.value }
 const menuOptions = [
         {
           label: '主题色配置',
@@ -57,7 +56,8 @@ const menuOptions = [
                 message.success('已保存主题！')
               },
               onClose: () => {
-                setTheme({ ...oldTheme })
+                let oldTheme = { ...theme.value }
+                setTheme(oldTheme)
               },
               maskClosable: false,
               style: { width: 'auto' }
