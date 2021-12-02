@@ -57,7 +57,7 @@ const menuOptions = [
                 message.success('已保存主题！')
               },
               onClose: () => {
-                setTheme(oldTheme)
+                setTheme({ ...oldTheme })
               },
               maskClosable: false,
               style: { width: 'auto' }
@@ -131,7 +131,7 @@ const langOptions = [
           key: 'typescript'
         },
         {
-          label: 'Python(ML)',
+          label: 'Python',
           key: 'python'
         },
         {

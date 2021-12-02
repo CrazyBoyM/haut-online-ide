@@ -14,7 +14,7 @@ export const submitCode = ({ code = '', lang = 'c_cpp', input = '' }, callback: 
     ['java', 62],
     ['javascript', 63],
     ['typescript', 74],
-    ['python', 20],
+    ['python', 71],
     ['php', 68],
     ['lua', 64],
     ['sh', 46],
