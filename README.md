@@ -1,10 +1,10 @@
 # 在线代码编辑器（onlineIDE）  
 ## 后端
 judge0 docker  
+后端请自行部署judge0 docker。  
+参考：https://my.oschina.net/suncf/blog/4257003
 ## 前端
 vue3 + vite + typescript + tailwind + ace editor  
-本项目主要为前端部分，后端请自行部署judge0 docker。  
-参考：https://my.oschina.net/suncf/blog/4257003
 ## 预览
 ![image](https://user-images.githubusercontent.com/35400185/148081461-53c0f5bf-171d-48bb-b958-1cbc708ad44d.png)
 
@@ -19,3 +19,5 @@ vue3 + vite + typescript + tailwind + ace editor
 支持字号、tab键大小切换。  
 支持自适应平板端、pc端布局。  
 支持直接引用dist文件夹中内容实现jsdeliver的cdn加速。（如需二次开发请配置.env）
+## 注意
+如需二次开发请务必更改/src/config/env.ts 中的后端接口地址为你自己的，因为项目里写的几个测试ip都不稳定随时关， 请自行部署后端api 。
