@@ -15,6 +15,7 @@ vue3 + vite + typescript + tailwind + ace editor
 ## 功能
 支持十几种语言（主要是judge0给力）  
 支持Ctrl + S 本地保存代码，刷新浏览器上次写的代码还在。  
-支持Ctrl + R 一键运行代码。
-支持字号、tab键大小切换。
-支持自适应平板端、pc端布局。
+支持Ctrl + R 一键运行代码。  
+支持字号、tab键大小切换。  
+支持自适应平板端、pc端布局。  
+支持直接引用dist文件夹中内容实现jsdeliver的cdn加速。（如需二次开发请配置.env）
