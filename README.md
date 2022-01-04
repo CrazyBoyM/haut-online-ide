@@ -9,6 +9,7 @@ vue3 + vite + typescript + tailwind + ace editor
 ![image](https://user-images.githubusercontent.com/35400185/148081461-53c0f5bf-171d-48bb-b958-1cbc708ad44d.png)
 
 支持主题切换和背景配置
+![image](https://user-images.githubusercontent.com/35400185/148083734-ff050501-3d21-4f4e-b951-a16a3deb8cd4.png)
 ![image](https://user-images.githubusercontent.com/35400185/148082641-b3bf5dbc-620e-4657-aa99-19541e1cc250.png)
 
 ## 功能
