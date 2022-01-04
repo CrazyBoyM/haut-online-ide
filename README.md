@@ -13,6 +13,8 @@ vue3 + vite + typescript + tailwind + ace editor
 ![image](https://user-images.githubusercontent.com/35400185/148082641-b3bf5dbc-620e-4657-aa99-19541e1cc250.png)
 
 ## 功能
-支持若干种语言（主要是judge0给力）  
-支持ctrl + s 本地保存代码，刷新浏览器上次写的代码还在。  
-支持ctrl + r 一键运行代码。
+支持十几种语言（主要是judge0给力）  
+支持Ctrl + S 本地保存代码，刷新浏览器上次写的代码还在。  
+支持Ctrl + R 一键运行代码。
+支持字号、tab键大小切换。
+支持自适应平板端、pc端布局。
