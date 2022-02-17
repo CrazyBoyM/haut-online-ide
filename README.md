@@ -1,4 +1,7 @@
 # 在线代码编辑器（onlineIDE）  
+
+vercel地址：https://haut-online-ide.vercel.app/  
+（该地址不支持提交运行代码）
 ## 后端
 judge0 docker  
 后端请自行部署judge0 docker。  
