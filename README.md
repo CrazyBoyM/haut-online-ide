@@ -2,7 +2,7 @@
 ## 后端
 judge0 docker  
 后端请自行部署judge0 docker。  
-参考：https://my.oschina.net/suncf/blog/4257003
+参考：https://github.com/judge0/judge0/blob/master/CHANGELOG.md#deployment-procedure
 ## 前端
 vue3 + vite + typescript + tailwind + ace editor  
 ## 预览
